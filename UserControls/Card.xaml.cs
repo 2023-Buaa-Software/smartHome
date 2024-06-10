@@ -5,12 +5,50 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Speech.Synthesis;
+using System.Net.Sockets;
+using System.Net.WebSockets;
+using System.Threading;
+using System.Net;
+using System.Text;
+using System.Speech.Recognition;
+
 
 namespace Smart_Home_App.UserControls
 {
     public partial class Card : UserControl
     {
         private SpeechSynthesizer speechSyn;
+        public static readonly DependencyProperty IsCheckedProperty = DependencyProperty.Register("IsChecked", typeof(bool), typeof(Card));
+        public static readonly DependencyProperty TitleProperty = DependencyProperty.Register("Title", typeof(string), typeof(Card));
+        public static readonly DependencyProperty IsHorizontalProperty = DependencyProperty.Register("IsHorizontal", typeof(bool), typeof(Card));
+        public static readonly DependencyProperty ImageOnProperty = DependencyProperty.Register("ImageOn", typeof(ImageSource), typeof(Card));
+        public static readonly DependencyProperty ImageOffProperty = DependencyProperty.Register("ImageOff", typeof(ImageSource), typeof(Card));
+
+        public string Title
+        {
+            get { return (string)GetValue(TitleProperty); }
+            set { SetValue(TitleProperty, value); }
+        }
+        public bool IsHorizontal
+        {
+            get { return (bool)GetValue(IsHorizontalProperty); }
+            set { SetValue(IsHorizontalProperty, value); }
+        }
+        public ImageSource ImageOn
+        {
+            get { return (ImageSource)GetValue(ImageOnProperty); }
+            set { SetValue(ImageOnProperty, value); }
+        }
+        public ImageSource ImageOff
+        {
+            get { return (ImageSource)GetValue(ImageOffProperty); }
+            set { SetValue(ImageOffProperty, value); }
+        }
+        public bool IsChecked
+        {
+            get { return (bool)GetValue(IsCheckedProperty); }
+            set { SetValue(IsCheckedProperty, value); }
+        }
 
         public Card()
         {
@@ -18,62 +56,28 @@ namespace Smart_Home_App.UserControls
             speechSyn = new SpeechSynthesizer();
         }
 
-        public string Title
+        public void SetCheckBoxState(bool isChecked)
         {
-            get { return (string)GetValue(TitleProperty); }
-            set { SetValue(TitleProperty, value); }
+            MyCheckBox.IsChecked = isChecked;
         }
 
-        public static readonly DependencyProperty TitleProperty = DependencyProperty.Register("Title", typeof(string), typeof(Card));
-
-
-        public bool IsChecked
+        public bool GetCheckBoxState()
         {
-            get { return (bool)GetValue(IsCheckedProperty); }
-            set { SetValue(IsCheckedProperty, value); }
+           return MyCheckBox.IsChecked ?? false;
         }
 
-        public static readonly DependencyProperty IsCheckedProperty = DependencyProperty.Register("IsChecked", typeof(bool), typeof(Card));
-
-
-        public bool IsHorizontal
-        {
-            get { return (bool)GetValue(IsHorizontalProperty); }
-            set { SetValue(IsHorizontalProperty, value); }
-        }
-
-        public static readonly DependencyProperty IsHorizontalProperty = DependencyProperty.Register("IsHorizontal", typeof(bool), typeof(Card));
-
-
-        public ImageSource ImageOn
-        {
-            get { return (ImageSource)GetValue(ImageOnProperty); }
-            set { SetValue(ImageOnProperty, value); }
-        }
-
-        public static readonly DependencyProperty ImageOnProperty = DependencyProperty.Register("ImageOn", typeof(ImageSource), typeof(Card));
-
-
-        public ImageSource ImageOff
-        {
-            get { return (ImageSource)GetValue(ImageOffProperty); }
-            set { SetValue(ImageOffProperty, value); }
-        }
-
-        public static readonly DependencyProperty ImageOffProperty = DependencyProperty.Register("ImageOff", typeof(ImageSource), typeof(Card));
-
-        private void toggle_Checked(object sender, RoutedEventArgs e)
+        private void MyCheckBox_Checked(object sender, RoutedEventArgs e)
         {
             string title = this.Title;
 
-            if (toggle.IsChecked == true)
+            if (MyCheckBox.IsChecked == true)
             {
                 Debug.WriteLine(title.ToString());
                 
                 if(title == "Refridgerator")
                 {
                     speechSyn.Speak("冰箱已打开");
-                } 
+                }
                 else if (title == "Temprature")
                 {
                     speechSyn.Speak("智能温度计已打开");
@@ -89,7 +93,6 @@ namespace Smart_Home_App.UserControls
             }
             else
             {
-                // MessageBox.Show($"Title: {title}");
                 if (title == "Refridgerator")
                 {
                     speechSyn.Speak("冰箱已关闭");

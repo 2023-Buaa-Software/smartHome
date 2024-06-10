@@ -14,11 +14,11 @@
             <Style TargetType="Border">
                 <Setter Property="Width" Value="150" />
                 <Style.Triggers>
-                    <DataTrigger Binding="{Binding ElementName=toggle, Path=IsChecked}" Value="True">
+                    <DataTrigger Binding="{Binding ElementName=MyCheckBox, Path=IsChecked}" Value="True">
                         <Setter Property="Background" Value="#3256F1" />
                     </DataTrigger>
 
-                    <DataTrigger Binding="{Binding ElementName=toggle, Path=IsChecked}" Value="False">
+                    <DataTrigger Binding="{Binding ElementName=MyCheckBox, Path=IsChecked}" Value="False">
                         <Setter Property="Background" Value="#EFEFEE" />
                     </DataTrigger>
 
@@ -38,12 +38,12 @@
                 <TextBlock.Style>
                     <Style TargetType="TextBlock">
                         <Style.Triggers>
-                            <DataTrigger Binding="{Binding ElementName=toggle, Path=IsChecked}" Value="True">
+                            <DataTrigger Binding="{Binding ElementName=MyCheckBox, Path=IsChecked}" Value="True">
                                 <Setter Property="Text" Value="On" />
                                 <Setter Property="Foreground" Value="#ffffff" />
                             </DataTrigger>
 
-                            <DataTrigger Binding="{Binding ElementName=toggle, Path=IsChecked}" Value="False">
+                            <DataTrigger Binding="{Binding ElementName=MyCheckBox, Path=IsChecked}" Value="False">
                                 <Setter Property="Text" Value="Off" />
                                 <Setter Property="Foreground" Value="#3256F1" />
                             </DataTrigger>
@@ -52,7 +52,7 @@
                 </TextBlock.Style>
             </TextBlock>
 
-            <CheckBox x:Name="toggle" IsChecked="{Binding ElementName=card,Path=IsChecked}" HorizontalAlignment="Right" Click="toggle_Checked" Cursor="Hand">
+            <CheckBox x:Name="MyCheckBox" IsChecked="{Binding ElementName=card,Path=IsChecked}" HorizontalAlignment="Right" Click="MyCheckBox_Checked" Cursor="Hand">
                 <CheckBox.Style>
                     <Style TargetType="CheckBox" BasedOn="{StaticResource toggleButton}">
                         <Setter Property="VerticalAlignment" Value="Top" />
@@ -73,11 +73,11 @@
                 <Image.Style>
                     <Style TargetType="Image">
                         <Style.Triggers>
-                            <DataTrigger Binding="{Binding ElementName=toggle, Path=IsChecked}" Value="True">
+                            <DataTrigger Binding="{Binding ElementName=MyCheckBox, Path=IsChecked}" Value="True">
                                 <Setter Property="Source" Value="{Binding ElementName=card,Path=ImageOn}" />
                             </DataTrigger>
 
-                            <DataTrigger Binding="{Binding ElementName=toggle, Path=IsChecked}" Value="False">
+                            <DataTrigger Binding="{Binding ElementName=MyCheckBox, Path=IsChecked}" Value="False">
                                 <Setter Property="Source" Value="{Binding ElementName=card,Path=ImageOff}" />
                             </DataTrigger>
                         </Style.Triggers>
@@ -89,11 +89,11 @@
                 <TextBlock.Style>
                     <Style TargetType="TextBlock">
                         <Style.Triggers>
-                            <DataTrigger Binding="{Binding ElementName=toggle, Path=IsChecked}" Value="True">
+                            <DataTrigger Binding="{Binding ElementName=MyCheckBox, Path=IsChecked}" Value="True">
                                 <Setter Property="Foreground" Value="#ffffff" />
                             </DataTrigger>
 
-                            <DataTrigger Binding="{Binding ElementName=toggle, Path=IsChecked}" Value="False">
+                            <DataTrigger Binding="{Binding ElementName=MyCheckBox, Path=IsChecked}" Value="False">
                                 <Setter Property="Foreground" Value="#2F2C37" />
                             </DataTrigger>
                         </Style.Triggers>

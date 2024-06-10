@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:uc="clr-namespace:Smart_Home_App.UserControls"
         mc:Ignorable="d" Height="720" Width="1080" WindowStartupLocation="CenterScreen"
-        Background="Transparent" WindowStyle="None" AllowsTransparency="True" Name="window">
+        Background="Transparent" WindowStyle="None" AllowsTransparency="True" Name="window" Loaded="Window_Loaded">
 
     <Border Background="#ffffff" Padding="30" CornerRadius="25" MouseDown="Border_MouseDown" MouseLeftButtonDown="Border_MouseLeftButtonDown">
         <Grid>
@@ -120,6 +120,12 @@
                             <ColumnDefinition Width="auto"/>
                         </Grid.ColumnDefinitions>
 
+                        <StackPanel Orientation="Horizontal" Margin="15,10,500,615" RenderTransformOrigin="0.783,0.83">
+                            <Button x:Name="microButton" Background="{x:Null}" Click="microButton_Click">
+                                <Image Source="/Images/microsoft.png" Width="20"/>
+                            </Button>
+                        </StackPanel>
+
                         <!--Titles-->
                         <StackPanel VerticalAlignment="Center" Margin="60 0 0 0">
                             <TextBlock Text="Controlling" Foreground="#ffffff" FontSize="22"/>
@@ -144,10 +150,10 @@
                                 </Grid.RowDefinitions>
 
                                 <!--Cards-->
-                                <uc:Card Grid.Row="0" Grid.Column="0" Margin="0 0 8 8" Title="Refridgerator" ImageOff="/Images/fridge_off.png" ImageOn="/Images/fridge_on.png"/>
-                                <uc:Card Grid.Row="0" Grid.Column="1" Margin="8 0 0 8" Title="Temprature" ImageOff="/Images/electric_off.png" ImageOn="/Images/electric_on.png" IsChecked="True"/>
-                                <uc:Card Grid.Row="1" Grid.Column="0" Margin="0 8 8 0" Title="Air Conditioner" ImageOff="/Images/cordinator_off.png" ImageOn="/Images/cordinator_on.png"/>
-                                <uc:Card Grid.Row="1" Grid.Column="1" Margin="8 8 0 0" Title="Lights" ImageOff="/Images/light_off.png" ImageOn="/Images/light_on.png"/>
+                                <uc:Card x:Name="kitchen_Refridgerator" Grid.Row="0" Grid.Column="0" Margin="0 0 8 8" Title="Refridgerator" ImageOff="/Images/fridge_off.png" ImageOn="/Images/fridge_on.png"/>
+                                <uc:Card x:Name="kitchen_Temperature" Grid.Row="0" Grid.Column="1" Margin="8 0 0 8" Title="Temprature" ImageOff="/Images/electric_off.png" ImageOn="/Images/electric_on.png"/>
+                                <uc:Card x:Name="kitchen_AirConditioner" Grid.Row="1" Grid.Column="0" Margin="0 8 8 0" Title="Air Conditioner" ImageOff="/Images/cordinator_off.png" ImageOn="/Images/cordinator_on.png"/>
+                                <uc:Card x:Name="kitchen_Lights" Grid.Row="1" Grid.Column="1" Margin="8 8 0 0" Title="Lights" ImageOff="/Images/light_off.png" ImageOn="/Images/light_on.png"/>
                             </Grid>
 
                             <!--Add Button-->
@@ -199,10 +205,10 @@
                             </Grid.ColumnDefinitions>
 
                             <!--Cards-->
-                            <uc:Card Grid.Column="0" IsHorizontal="True" Margin="12 0 12 0" Title="Refridgerator" ImageOff="/Images/fridge_off.png" ImageOn="/Images/fridge_on.png"/>
-                            <uc:Card Grid.Column="1" IsHorizontal="True" Margin="12 0 12 0" Title="Temprature" ImageOff="/Images/electric_off.png" ImageOn="/Images/electric_on.png" IsChecked="True"/>
-                            <uc:Card Grid.Column="2" IsHorizontal="True" Margin="12 0 12 0" Title="Air Conditioner" ImageOff="/Images/cordinator_off.png" ImageOn="/Images/cordinator_on.png"/>
-                            <uc:Card Grid.Column="3" IsHorizontal="True" Margin="12 0 12 0" Title="Lights" ImageOff="/Images/light_off.png" ImageOn="/Images/light_on.png"/>
+                            <uc:Card x:Name="card1" Grid.Column="0" IsHorizontal="True" Margin="12 0 12 0" Title="Refridgerator" ImageOff="/Images/fridge_off.png" ImageOn="/Images/fridge_on.png"/>
+                            <uc:Card x:Name="card2" Grid.Column="1" IsHorizontal="True" Margin="12 0 12 0" Title="Temprature" ImageOff="/Images/electric_off.png" ImageOn="/Images/electric_on.png" IsChecked="True"/>
+                            <uc:Card x:Name="card3" Grid.Column="2" IsHorizontal="True" Margin="12 0 12 0" Title="Air Conditioner" ImageOff="/Images/cordinator_off.png" ImageOn="/Images/cordinator_on.png"/>
+                            <uc:Card x:Name="card4" Grid.Column="3" IsHorizontal="True" Margin="12 0 12 0" Title="Lights" ImageOff="/Images/light_off.png" ImageOn="/Images/light_on.png"/>
 
                         </Grid>
                     </Grid>
