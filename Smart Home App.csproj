@@ -28,6 +28,7 @@
     <None Remove="Images\_setting.png" />
     <None Remove="Images\_shield.png" />
     <None Remove="Images\_users.png" />
+    <None Remove="microsoft.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -96,6 +97,7 @@
     <Resource Include="Images\_users.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="microsoft.png" />
   </ItemGroup>
 
 </Project>

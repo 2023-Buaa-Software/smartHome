@@ -120,9 +120,9 @@
                             <ColumnDefinition Width="auto"/>
                         </Grid.ColumnDefinitions>
 
-                        <StackPanel Orientation="Horizontal" Margin="15,10,500,615" RenderTransformOrigin="0.783,0.83">
+                        <StackPanel Orientation="Horizontal" Margin="15,10,500,615" RenderTransformOrigin="0.783,0.83" Cursor="Hand">
                             <Button x:Name="microButton" Background="{x:Null}" Click="microButton_Click">
-                                <Image Source="/Images/microsoft.png" Width="20"/>
+                                <Image Source="/microsoft.png" Width="20" Opacity="1" Cursor=""/>
                             </Button>
                         </StackPanel>
 
