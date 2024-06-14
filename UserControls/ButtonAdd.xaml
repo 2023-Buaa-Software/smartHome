@@ -15,20 +15,20 @@
             </Button>
             
             <Popup Name="myPopup" IsOpen="{Binding IsChecked, ElementName=TogglePopupButton}">
-                <StackPanel Height="500" Width="700" Background="White">
-                    <Label Content="请输入用户的id" HorizontalAlignment="Center" x:Name="Theme"/>
-                    <Grid Height="100" Margin="0 10 0 10">
+                <StackPanel Height="200" Width="300" Background="White">
+                    <Label Content="请输入新设备信息" HorizontalAlignment="Center" x:Name="Theme"/>
+                    <Grid Height="50" Margin="0 10 0 10">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="2*"/>
-                            <ColumnDefinition Width="7*"/>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="6*"/>
                         </Grid.ColumnDefinitions>
                         <Label Grid.Column="0" HorizontalAlignment="Center" Content="中文名称" x:Name="Input"/>
                         <TextBox TextWrapping="Wrap" x:Name="labelTextBox" Grid.Column="1"/>
                     </Grid>
-                    <Grid Height="100" Margin="0 10 0 10">
+                    <Grid Height="50" Margin="0 10 0 10">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="2*"/>
-                            <ColumnDefinition Width="7*"/>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="6*"/>
                         </Grid.ColumnDefinitions>
                         <Label Grid.Column="0" HorizontalAlignment="Center" Content="英文名称" x:Name="Input1"/>
                         <TextBox TextWrapping="Wrap" x:Name="titleTextBox" Grid.Column="1"/>

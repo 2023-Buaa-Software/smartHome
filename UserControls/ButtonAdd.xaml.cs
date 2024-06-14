@@ -32,6 +32,8 @@ namespace Smart_Home_App.UserControls
             string title = titleTextBox.Text;
             string label = labelTextBox.Text;
             Add_Device(this, new Dictionary<string, string> { { "title", title }, { "label", label } });
+            titleTextBox.Text = "";
+            labelTextBox.Text = "";
         }
 
         private void Cancel(object sender, RoutedEventArgs e)
