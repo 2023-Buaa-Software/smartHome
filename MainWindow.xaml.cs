@@ -11,6 +11,10 @@ using System.Threading;
 using System.Runtime.InteropServices;
 using System.Speech.Recognition;
 using System.Linq;
+using System.Collections.Generic;
+using System.Windows.Controls;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace Smart_Home_App
 {
@@ -24,6 +28,7 @@ namespace Smart_Home_App
             InitializeComponent();
             InitializeSpeechRecognition();
             speechSyn = new SpeechSynthesizer();
+            addDeviceButton.Add_Device += add_device;
         }
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
@@ -273,6 +278,24 @@ namespace Smart_Home_App
         {
             //Task.Run(() => StartListeningAsync());
             //await StartListeningAsync();
+        }
+
+        private void add_device(object sender, Dictionary<string, string> e) {
+            //
+            MessageBox.Show(e["title"]);
+            ColumnDefinition columnDefinition = new ColumnDefinition();
+            columnDefinition.Width = new GridLength(215);
+            cards.ColumnDefinitions.Add(columnDefinition);
+            Card card = new Card();
+            card.Name = "card" + (cards.Children.Count + 1);
+            card.Title = e["title"];
+            card.Label = e["label"];
+            card.IsHorizontal = true;
+            card.ImageOff = card4.ImageOff;
+            card.ImageOn = card4.ImageOn;
+            //Grid.Column="3" IsHorizontal="True" Margin="12 0 12 0"
+            Grid.SetColumn(card, cards.Children.Count);
+            cards.Children.Add(card);
         }
     }
 }

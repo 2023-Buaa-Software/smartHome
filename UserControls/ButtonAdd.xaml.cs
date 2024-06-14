@@ -1,10 +1,13 @@
-﻿using System.Windows;
+﻿using System;
+using System.Collections.Generic;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace Smart_Home_App.UserControls
 {
     public partial class ButtonAdd : UserControl
     {
+        public event EventHandler<Dictionary<string, string>> Add_Device;
         public ButtonAdd()
         {
             InitializeComponent();
@@ -26,6 +29,9 @@ namespace Smart_Home_App.UserControls
         private void Commit(object sender, RoutedEventArgs e)
         {
             myPopup.IsOpen = false;
+            string title = titleTextBox.Text;
+            string label = labelTextBox.Text;
+            Add_Device(this, new Dictionary<string, string> { { "title", title }, { "label", label } });
         }
 
         private void Cancel(object sender, RoutedEventArgs e)

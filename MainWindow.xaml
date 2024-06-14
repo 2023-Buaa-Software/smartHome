@@ -183,7 +183,7 @@
                         </Grid.RowDefinitions>
 
                         <!--Add Button-->
-                        <uc:ButtonAdd Caption="Add New Device" Margin="0 40 40 0"/>
+                        <uc:ButtonAdd x:Name="addDeviceButton" Caption="Add New Device"  Margin="0 40 40 0"/>
 
                         <!--Titles-->
                         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 40 0 0">
@@ -198,7 +198,7 @@
                         <!--Panels-->
                         <ScrollViewer HorizontalScrollBarVisibility="Auto" Margin="0 440 0 0" VerticalScrollBarVisibility="Disabled">
 
-                            <Grid Grid.Row="1" Margin="0 0 0 30" HorizontalAlignment="Center">
+                            <Grid x:Name="cards" Grid.Row="1" Margin="0 0 0 30" HorizontalAlignment="Center">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="215"/>
                                     <ColumnDefinition Width="215"/>
