@@ -18,5 +18,19 @@ namespace Smart_Home_App.UserControls
 
         public static readonly DependencyProperty CaptionProperty = DependencyProperty.Register("Caption", typeof(string), typeof(ButtonAdd));
 
+        private void show_popup(object sender, RoutedEventArgs e)
+        {
+            myPopup.IsOpen = true;
+        }
+
+        private void Commit(object sender, RoutedEventArgs e)
+        {
+            myPopup.IsOpen = false;
+        }
+
+        private void Cancel(object sender, RoutedEventArgs e)
+        {
+            myPopup.IsOpen = false;
+        }
     }
 }

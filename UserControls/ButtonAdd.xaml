@@ -8,10 +8,45 @@
     <Button Style="{StaticResource addButton}" Width="300" VerticalAlignment="Top" HorizontalAlignment="Right">
         <StackPanel Orientation="Horizontal">
             <TextBlock Text="{Binding ElementName=buttonAdd,Path=Caption}" VerticalAlignment="Center"/>
-            <Border Margin="20 0 0 0" Width="37" Padding="10" Background="#3253F1" CornerRadius="50" Cursor="Hand">
-                <Image Source="../Images/add.png" />
-            </Border>
+            <Button  Click="show_popup" Background="{x:Null}" BorderBrush="{x:Null}" >
+                <Border Margin="20 0 0 0" Width="37" Padding="10" Background="#3253F1" CornerRadius="50" Cursor="Hand">
+                    <Image Source="../Images/add.png" />
+                </Border>
+            </Button>
+            
+            <Popup Name="myPopup" IsOpen="{Binding IsChecked, ElementName=TogglePopupButton}">
+                <StackPanel Height="500" Width="700" Background="White">
+                    <Label Content="请输入用户的id" HorizontalAlignment="Center" x:Name="Theme"/>
+                    <Grid Height="100" Margin="0 10 0 10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="7*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" HorizontalAlignment="Center" Content="中文名称" x:Name="Input"/>
+                        <TextBox TextWrapping="Wrap" x:Name="labelTextBox" Grid.Column="1"/>
+                    </Grid>
+                    <Grid Height="100" Margin="0 10 0 10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="7*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" HorizontalAlignment="Center" Content="英文名称" x:Name="Input1"/>
+                        <TextBox TextWrapping="Wrap" x:Name="titleTextBox" Grid.Column="1"/>
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Column="0" Content="确认" Click="Commit" HorizontalAlignment="Center"/>
+                        <Button Grid.Column="1" Content="取消" HorizontalAlignment="Center" Click="Cancel"/>
+                    </Grid>
+                </StackPanel>
+                
+            </Popup>
         </StackPanel>
+
     </Button>
     
+
 </UserControl>
