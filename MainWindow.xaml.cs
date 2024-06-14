@@ -272,7 +272,7 @@ namespace Smart_Home_App
         private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
             //Task.Run(() => StartListeningAsync());
-            await StartListeningAsync();
+            //await StartListeningAsync();
         }
     }
 }

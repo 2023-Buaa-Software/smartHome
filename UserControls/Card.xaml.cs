@@ -20,6 +20,7 @@ namespace Smart_Home_App.UserControls
         private SpeechSynthesizer speechSyn;
         public static readonly DependencyProperty IsCheckedProperty = DependencyProperty.Register("IsChecked", typeof(bool), typeof(Card));
         public static readonly DependencyProperty TitleProperty = DependencyProperty.Register("Title", typeof(string), typeof(Card));
+        public static readonly DependencyProperty LabelProperty = DependencyProperty.Register("Label", typeof(string), typeof(Card));
         public static readonly DependencyProperty IsHorizontalProperty = DependencyProperty.Register("IsHorizontal", typeof(bool), typeof(Card));
         public static readonly DependencyProperty ImageOnProperty = DependencyProperty.Register("ImageOn", typeof(ImageSource), typeof(Card));
         public static readonly DependencyProperty ImageOffProperty = DependencyProperty.Register("ImageOff", typeof(ImageSource), typeof(Card));
@@ -28,6 +29,11 @@ namespace Smart_Home_App.UserControls
         {
             get { return (string)GetValue(TitleProperty); }
             set { SetValue(TitleProperty, value); }
+        }
+        public string Label
+        {
+            get { return (string)GetValue(LabelProperty); }
+            set { SetValue(LabelProperty, value); }
         }
         public bool IsHorizontal
         {
@@ -73,8 +79,8 @@ namespace Smart_Home_App.UserControls
             if (MyCheckBox.IsChecked == true)
             {
                 Debug.WriteLine(title.ToString());
-                
-                if(title == "Refridgerator")
+
+                /*if(title == "Refridgerator")
                 {
                     speechSyn.Speak("冰箱已打开");
                 }
@@ -89,11 +95,12 @@ namespace Smart_Home_App.UserControls
                 else if (title == "Lights")
                 {
                     speechSyn.Speak("灯光已打开");
-                }
+                }*/
+                speechSyn.Speak(this.Label + "已打开");
             }
             else
             {
-                if (title == "Refridgerator")
+                /*if (title == "Refridgerator")
                 {
                     speechSyn.Speak("冰箱已关闭");
                 }
@@ -108,7 +115,8 @@ namespace Smart_Home_App.UserControls
                 else if (title == "Lights")
                 {
                     speechSyn.Speak("灯光已关闭");
-                }
+                }*/
+                speechSyn.Speak(this.Label + "已关闭");
             }
         }
     }

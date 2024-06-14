@@ -150,10 +150,10 @@
                                 </Grid.RowDefinitions>
 
                                 <!--Cards-->
-                                <uc:Card x:Name="kitchen_Refridgerator" Grid.Row="0" Grid.Column="0" Margin="0 0 8 8" Title="Refridgerator" ImageOff="/Images/fridge_off.png" ImageOn="/Images/fridge_on.png"/>
-                                <uc:Card x:Name="kitchen_Temperature" Grid.Row="0" Grid.Column="1" Margin="8 0 0 8" Title="Temprature" ImageOff="/Images/electric_off.png" ImageOn="/Images/electric_on.png"/>
-                                <uc:Card x:Name="kitchen_AirConditioner" Grid.Row="1" Grid.Column="0" Margin="0 8 8 0" Title="Air Conditioner" ImageOff="/Images/cordinator_off.png" ImageOn="/Images/cordinator_on.png"/>
-                                <uc:Card x:Name="kitchen_Lights" Grid.Row="1" Grid.Column="1" Margin="8 8 0 0" Title="Lights" ImageOff="/Images/light_off.png" ImageOn="/Images/light_on.png"/>
+                                <uc:Card x:Name="kitchen_Refridgerator" Grid.Row="0" Grid.Column="0" Margin="0 0 8 8" Label="冰箱" Title="Refridgerator" ImageOff="/Images/fridge_off.png" ImageOn="/Images/fridge_on.png"/>
+                                <uc:Card x:Name="kitchen_Temperature" Grid.Row="0" Grid.Column="1" Margin="8 0 0 8" Label="智能温度计" Title="Temprature" ImageOff="/Images/electric_off.png" ImageOn="/Images/electric_on.png"/>
+                                <uc:Card x:Name="kitchen_AirConditioner" Grid.Row="1" Grid.Column="0" Margin="0 8 8 0" Label="空调" Title="Air Conditioner" ImageOff="/Images/cordinator_off.png" ImageOn="/Images/cordinator_on.png"/>
+                                <uc:Card x:Name="kitchen_Lights" Grid.Row="1" Grid.Column="1" Margin="8 8 0 0" Label="灯光" Title="Lights" ImageOff="/Images/light_off.png" ImageOn="/Images/light_on.png"/>
                             </Grid>
 
                             <!--Add Button-->
@@ -196,21 +196,25 @@
                         </StackPanel>
 
                         <!--Panels-->
-                        <Grid Grid.Row="1" Margin="0 0 0 30" HorizontalAlignment="Center">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
+                        <ScrollViewer HorizontalScrollBarVisibility="Auto" Margin="0 440 0 0" VerticalScrollBarVisibility="Disabled">
 
-                            <!--Cards-->
-                            <uc:Card x:Name="card1" Grid.Column="0" IsHorizontal="True" Margin="12 0 12 0" Title="Refridgerator" ImageOff="/Images/fridge_off.png" ImageOn="/Images/fridge_on.png"/>
-                            <uc:Card x:Name="card2" Grid.Column="1" IsHorizontal="True" Margin="12 0 12 0" Title="Temprature" ImageOff="/Images/electric_off.png" ImageOn="/Images/electric_on.png" IsChecked="True"/>
-                            <uc:Card x:Name="card3" Grid.Column="2" IsHorizontal="True" Margin="12 0 12 0" Title="Air Conditioner" ImageOff="/Images/cordinator_off.png" ImageOn="/Images/cordinator_on.png"/>
-                            <uc:Card x:Name="card4" Grid.Column="3" IsHorizontal="True" Margin="12 0 12 0" Title="Lights" ImageOff="/Images/light_off.png" ImageOn="/Images/light_on.png"/>
+                            <Grid Grid.Row="1" Margin="0 0 0 30" HorizontalAlignment="Center">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="215"/>
+                                    <ColumnDefinition Width="215"/>
+                                    <ColumnDefinition Width="215"/>
+                                    <ColumnDefinition Width="215"/>
+                                </Grid.ColumnDefinitions>
 
-                        </Grid>
+                                <!--Cards-->
+                                <uc:Card x:Name="card1" Grid.Column="0" IsHorizontal="True" Margin="12 0 12 0" Label="冰箱" Title="Refridgerator" ImageOff="/Images/fridge_off.png" ImageOn="/Images/fridge_on.png"/>
+                                <uc:Card x:Name="card2" Grid.Column="1" IsHorizontal="True" Margin="12 0 12 0" Label="智能温度计" Title="Temprature" ImageOff="/Images/electric_off.png" ImageOn="/Images/electric_on.png" IsChecked="True"/>
+                                <uc:Card x:Name="card3" Grid.Column="2" IsHorizontal="True" Margin="12 0 12 0" Label="空调" Title="Air Conditioner" ImageOff="/Images/cordinator_off.png" ImageOn="/Images/cordinator_on.png"/>
+                                <uc:Card x:Name="card4" Grid.Column="3" IsHorizontal="True" Margin="12 0 12 0" Label="灯光" Title="Lights" ImageOff="/Images/light_off.png" ImageOn="/Images/light_on.png"/>
+
+                            </Grid>
+                        </ScrollViewer>
+
                     </Grid>
 
                 </Border>
