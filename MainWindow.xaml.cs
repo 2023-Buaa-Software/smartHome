@@ -277,7 +277,7 @@ namespace Smart_Home_App
         private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
             //Task.Run(() => StartListeningAsync());
-            await StartListeningAsync();
+            //await StartListeningAsync();
         }
 
         private void add_device(object sender, Dictionary<string, string> e) {
